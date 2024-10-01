@@ -1,0 +1,18 @@
+body{
+    overflow-x: hidden;
+}
+
+.main{
+    background-color: rgb(48, 126, 58);
+    border-radius: 10px;
+}
+
+.input{
+    width: 300px;
+}
+
+.btn{
+    width: 100px;
+}
+
+
