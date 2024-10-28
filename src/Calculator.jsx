@@ -24,47 +24,59 @@ function Calculator() {
 
   return (
     <>
-      <Row className='mt-5 p-4=5'>
-        <Col></Col>
+      <Row className="mt-5 px-4">
+        <Col xs={0} md={1} lg={1}></Col> 
 
-        <Col lg={5}>
-            <img src="https://www.srs.sg/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcalculator.577db6f2.gif&w=640&q=75" alt="gif"
-            style={{borderRadius:'10px'}} />
+        <Col xs={12} md={5} className="d-flex justify-content-center">
+          <img 
+            src="https://www.srs.sg/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcalculator.577db6f2.gif&w=640&q=75" 
+            alt="gif" 
+            style={{ borderRadius: '10px', maxWidth: '100%', height: 'auto' }} 
+          />
         </Col>
 
-        <Col lg={6}>
-            <div className="container d-flex flex-column w-75 p-4 main">
+        <Col xs={12} md={6} lg={5} className="d-flex justify-content-center mt-4 mt-md-0">
+          <div className="container d-flex flex-column align-items-center text-center w-100 p-3 main">
+            <h3 className="text-center text-danger">Calculations</h3>
 
-              <h3 className='text-center text-danger'>Calculations</h3>
-
-              <div className='d-flex align-items-center flex-column'>
-
-              <FloatingLabel controlId="floatingPercentage" label="Enter Discount Value (%)" className='mt-4'>
-                <Form.Control type="Number" placeholder="Enter Discount Value (%)"  className='input' value={percentage || ""} onChange={(e) => setPercentage(e.target.value)}/>
+            <div className="d-flex align-items-center flex-column w-100">
+              <FloatingLabel controlId="floatingPercentage" label="Enter Discount Value (%)" className="mt-4 w-75">
+                <Form.Control 
+                  type="number" 
+                  placeholder="Enter Discount Value (%)" 
+                  className="input" 
+                  value={percentage || ""} 
+                  onChange={(e) => setPercentage(e.target.value)} 
+                />
               </FloatingLabel>
 
-              <FloatingLabel controlId="floatingPrice" label="Enter Amount" className='mt-4'>
-                <Form.Control type="number" placeholder="Enter Amount" className='input' value={amount || ""}  onChange={(e) => setAmount(e.target.value)}/>
+              <FloatingLabel controlId="floatingPrice" label="Enter Amount" className="mt-4 w-75">
+                <Form.Control 
+                  type="number" 
+                  placeholder="Enter Amount" 
+                  className="input" 
+                  value={amount || ""} 
+                  onChange={(e) => setAmount(e.target.value)} 
+                />
               </FloatingLabel>
 
-              <div>
-                <Button variant="warning" className='btn mt-5 fs-5 me-5' onClick={e => calculate(e)}>Calculate</Button>
-                <Button variant="danger" className='btn mt-5 fs-5' onClick={e => reset(e)}>Reset</Button>
+              <div className="d-flex justify-content-around w-100 mt-4">
+                <Button variant="warning" className="fs-5" onClick={(e) => calculate(e)}>Calculate</Button>
+                <Button variant="danger" className="fs-5" onClick={(e) => reset(e)}>Reset</Button>
               </div>
+            </div>
 
-              </div>
-
-              <div className="result text-center mt-5 text-warning">
-              <p className='fs-4'>Your new Price is</p>
+            <div className="result text-center mt-4 text-warning">
+              <p className="fs-4">Your new Price is</p>
               <h2>&#8377;{Price}</h2>
-              </div>
-
+            </div>
           </div>
-              
         </Col>
 
-        <Col></Col>
+        <Col xs={0} md={1} lg={1}></Col>
       </Row>
+
+
     </>
   )
 }
